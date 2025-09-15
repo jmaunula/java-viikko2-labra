@@ -17,8 +17,55 @@ package fi.viikko2.task02;
 
 public class MathUtil {
 
-    
+    public static int sum(int a, int b) {
+        return a + b;
+    }
 
-    public static int placeholderInt(){ return 0; }
-    public static double placeholderDouble(){ return 0.0; }
+    public static int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static int sum(int[] a) {
+        int sum = 0;
+        for (int i : a) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    public static double sum(double[] a) {
+        double sum = 0;
+        for (double i : a) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    public static int max(int[] a) {
+        int max = Integer.MIN_VALUE;
+        for (int i : a) {
+            if (i > max) {
+                max = i;
+            }
+        }
+        return max;
+    }
+
+    public static int min(int[] a) {
+        int min = Integer.MAX_VALUE;
+        for (int i : a) {
+            if (i < min) {
+                min = i;
+            }
+        }
+        return min;
+    }
+
+    public static int placeholderInt() {
+        return 0;
+    }
+
+    public static double placeholderDouble() {
+        return 0.0;
+    }
 }

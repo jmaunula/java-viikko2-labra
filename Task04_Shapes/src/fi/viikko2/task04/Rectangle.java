@@ -18,19 +18,31 @@ package fi.viikko2.task04;
 
 public class Rectangle extends Shape {
 
+    private double width, height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
 
     @Override
-    public double area(){ 
-        //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-        throw new UnsupportedOperationException("TODO: implement area()"); }
+    public double area() {
+        return this.width * this.height;
+    }
 
     @Override
-    public String toString(){ 
-        //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-        throw new UnsupportedOperationException("TODO: implement toString()"); }
+    public String toString() {
+        // Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
+        return "Rectangle w:" + this.width + " h:" + this.height;
+    }
 
     @Override
-    public boolean equals(Object o){ 
-        //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-        throw new UnsupportedOperationException("TODO: implement equals(Object)"); }
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof Rectangle))
+            return false;
+        Rectangle other = (Rectangle) o;
+        return this.width == other.width && java.util.Objects.equals(this.height, other.height);
+    }
 }

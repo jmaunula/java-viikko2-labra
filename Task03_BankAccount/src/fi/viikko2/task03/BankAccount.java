@@ -18,19 +18,50 @@
 package fi.viikko2.task03;
 
 public class BankAccount {
-   
+    private String accountNumber;
+    private double balance;
 
+    public BankAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = (initialBalance < 0) ? 0 : initialBalance;
+    }
 
+    public String deposit(double amount) {
+        if (amount <= 0)
+            return "The amount cannot be zero nor negative";
+        this.balance += amount;
+        return "Deposit: " + amount + " Balance now: " + this.balance;
+    }
 
-    @Override
-    public String toString(){
-        //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-        throw new UnsupportedOperationException("TODO: implement toString()");
+    public String withdraw(double amount) {
+        if (amount <= 0)
+            return "The amount cannot be zero nor negative";
+
+        if ((this.balance - amount) < 0)
+            return "There is not enough money on the account";
+
+        this.balance -= amount;
+        return "Withdraw: " + amount + " Balance now: " + this.balance;
+    }
+
+    public String getBalance() {
+        return "Balance: " + this.balance;
+
     }
 
     @Override
-    public boolean equals(Object o){
-        //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-        throw new UnsupportedOperationException("TODO: implement equals(Object)");
+    public String toString() {
+        // Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
+        return "BankAccount{accountNumber = " + accountNumber + " balance = " + balance + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof BankAccount))
+            return false;
+        BankAccount other = (BankAccount) o;
+        return this.accountNumber == other.accountNumber && java.util.Objects.equals(this.balance, other.balance);
     }
 }

@@ -18,5 +18,16 @@ package fi.viikko2.task05;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Tehtävä 5: implementoi SalariedEmployee ja HourlyEmployee ennen ajoa.");
+
+        SalariedEmployee a = new SalariedEmployee("Pekka", 2000);
+        HourlyEmployee b = new HourlyEmployee("Teuvo", 15, 160);
+        Employee[] payroll = { a, b };
+
+        double sum = 0;
+        for (Employee employee : payroll) {
+            System.out.println(employee);
+            sum += employee.monthlyPay();
+        }
+        System.out.println("Kuukausipalkat yhteensä: " + sum);
     }
 }

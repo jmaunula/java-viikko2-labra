@@ -16,15 +16,34 @@
 
 package fi.viikko2.task05;
 
+import java.util.Objects;
+
 public class Employee {
-    // TODO: protected String name;
-    // TODO: public Employee(String name){ ... }
+    protected String name;
 
-    public double monthlyPay(){ return 0.0; }
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    public double monthlyPay() {
+        return 0.0;
+    }
 
     @Override
-    public String toString(){ throw new UnsupportedOperationException("TODO: implement toString()"); }
+    public String toString() {
+        return "Employee";
+    }
 
     @Override
-    public boolean equals(Object o){ throw new UnsupportedOperationException("TODO: implement equals(Object)"); }
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (this.getClass() != o.getClass())
+            return false;
+
+        Employee other = (Employee) o;
+        return Objects.equals(this.name, other.name);
+    }
 }

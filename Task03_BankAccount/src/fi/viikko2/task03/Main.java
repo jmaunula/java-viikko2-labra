@@ -16,7 +16,7 @@ package fi.viikko2.task03;
 
 public class Main {
     public static void main(String[] args) {
-        /** aja sitten nämä testit:
+
         BankAccount a = new BankAccount("FI00 123", 100);
         BankAccount b = new BankAccount("FI00 999", -50);
         System.out.println(a.deposit(25));
@@ -26,6 +26,12 @@ public class Main {
         System.out.println(b.getBalance());
         BankAccount a2 = new BankAccount("FI00 123", 0);
         System.out.println(a.equals(a2));
-        */
+
+        // BankAccount a = new BankAccount("FI00 123", 100);
+
+        // System.out.println(a.deposit(20));
+        // System.out.println(a.withdraw(30));
+        // System.out.println(a);
+
     }
 }
